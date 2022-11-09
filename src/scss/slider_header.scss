@@ -1,0 +1,338 @@
+// Общие свойства всех слайдеров на странице
+/* Слайдер */ .slick-slider{}
+/* Слайдер запущен */ .slick-slider.slick-initialized{}
+/* Слайдер с точками */ .slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */ .slick-list { overflow: hidden;}
+/* Лента слайдов */ .slick-track{ display: flex; }
+/* Слайд */ .slick-slide{}
+/* Слайд активный (показывается) */ .slick-slide.slick-active{}
+/* Слайд основной */ .slick-slide.slick-current{}
+/* Слайд по центру */ .slick-slide.slick-center{}
+/* Клонированный слайд */ .slick-slide.slick-cloned{}
+/* Стрелка */ .slick-arrow{}
+/* Стрелка влево */ .slick-arrow.slick-prev{}
+/* Стрелка вправо */ .slick-arrow.slick-next{}
+/* Стрелка не активная */ .slick-arrow.slick-disabled{}
+/* Точки (булиты) */ .slick-dots{} .slick-dots li{}
+/* Активная точка */ .slick-dots li.slick-active{}
+/* Элемент точки */ .slick-dots li button{}
+
+// Слайдер header_slider
+#number_phone{
+color: #130F15;
+background-color: #130F15;
+  border: none;
+  cursor: default;
+  z-index: -50;
+  opacity: 0;
+}
+.header_slider{
+  margin: 0 auto 50px auto;
+  position: relative;
+  height: 686px;
+  padding-bottom: 70px;
+  padding-top: 33px;
+  .slick-arrow{
+    position: absolute;
+    bottom: 80px;
+    z-index: 10;
+    font-size: 20px;
+    color: #EAEEF3;
+    border-color: #EAEEF3;
+    //background-color: #130F15;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    margin: 12px;
+    &.slick-prev { left: 0;}
+    &.slick-next { left: 80px; }
+  }
+  &_item{
+    .slider_flex{
+      display: flex;
+      flex-flow: column wrap-reverse;
+      justify-content: space-around;
+    }
+    .header_slider_img{
+      flex: 0 0 555px;
+      max-width: 555px;
+      img {
+        width: 555px;
+        height: 686px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      }
+    .header_slider_text{
+      flex: 1 1 auto;
+      min-width: 300px;
+      max-width: 600px;
+      position: relative;
+
+      .title{
+        padding: 15px;
+        font-family: Raleway700;
+        font-size: 58px;
+        line-height: 73px;
+
+        @media (max-width : 1170px) {
+          font-size: 40px;
+        }
+        @media (max-width : 760px) {
+          font-size: 35px;
+          line-height: 50px;
+        }
+      }
+
+      .header_content{
+        position: relative;
+        top: -450px;
+        font-family: Inter400;
+        font-size: 20px;
+        line-height: 36px;
+        padding: 20px;
+      }
+
+
+      .header_form{
+        position: relative;
+        top: -960px;
+        left: 5px;
+        width: 510px;
+        max-width: 510px;
+        height: 72px;
+        border-radius: 20px;
+        background-color: white;
+        color: #e52e56;;
+        z-index: 50;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        &_ph{
+          flex: 1 1 311px;
+          max-width: 311px;
+          height: 70px;
+          border: none;
+          font-family: Inter400;
+          font-size: 35px;
+          line-height: 70px;
+          transition: max-width 1s;
+
+
+        }
+        button{
+          flex: 1 1 181px;
+          height: 56px;
+          border-radius: 20px;
+          font-size: 20px;
+          margin-top: 8px;
+        }
+      }
+
+
+    }
+  }
+  .slick-dots{
+    position: absolute;
+    top: 662px;
+    left: 300px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slick-dots li{list-style: none;}
+  .slick-dots li button{
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #545961;
+    font-size: 0;
+    margin: 5px;
+
+
+  }
+  .slick-dots .slick-active button{
+    background-color: #130f15;
+    width: 14px;
+    height: 14px;
+    border: 0;
+    border-radius: 50%;
+    font-size: 0;
+    margin: 5px;
+  }
+}
+
+@media (max-width : 1700px) {
+  .header_slider {
+    &_item {
+      .header_slider_img {
+        flex: 1 1 350px;     //
+        max-width: 350px;   //
+
+        img {
+          width: 350px;      //
+          height: 500px;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+
+      .header_slider_text {
+        .header_content {
+          top: -465px;       //
+        }
+       .header_form {
+          top: -1030px;       //
+        }
+
+
+      }
+    }
+  }
+}
+
+@media (max-width : 1460px) {
+  .header_slider {
+    &_item {
+      .slider_flex{
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        justify-content: end;
+        align-content: flex-end;
+        max-width: 100%;
+      }
+      .header_slider_img {
+
+        img {
+          width: 330px;
+          height: 500px;
+        }
+      }
+
+      .header_slider_text {
+        max-width: 500px;
+        .header_form {
+          width: 440px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width : 1170px) {
+  .header_slider {
+    &_item {
+      .header_slider_img {
+
+        img {
+          width: 340px;
+          height: 390px;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+      .header_slider_text {
+        max-width: 500px;
+        .header_content {
+          top: -500px;       //
+        }
+        .header_form {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width : 760px) {
+  .header_slider {
+    &_item {
+      .header_slider_img {
+        max-width: 150px;
+        img {
+          width: 150px;
+          height: 250px;
+        }
+      }
+      .header_slider_text {
+        //display: none;
+        max-width: 500px;
+        .header_content {
+          top: -570px;       //
+        }
+        .header_form {
+          width: 450px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width : 550px) {
+  .header_slider {
+    height: 370px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 100px;
+    &_item {
+      .header_slider_img {
+        position: absolute;
+        top: 0px;
+        max-width: 90vw;
+        opacity: 0.9;
+        img {
+          width: 90vw;
+          height: 350px;
+        }
+      }
+      .header_slider_text {
+        //display: none;
+        max-width: 500px;
+
+        .title{
+          position: absolute;
+          font-size: 15px;
+          padding: 10px;
+          left: 20px;
+          height: 50px;
+          width: 265px;
+          background: white;
+          top: 245px;
+          border-radius: 10px;
+          opacity: 0.75;
+        }
+        .header_content {
+          display: none;
+          font-size: 15px;
+          top: -275px;       //
+          padding: 0;
+        }
+        .header_form {
+          top: 305px;
+          width: 275px;
+          height: 40px;
+          left: 5px;
+          button{
+            font-size: 15px;
+            height: 38px;
+            margin: 0;
+          }
+          .header_form_ph{
+            font-size: 20px;
+            line-height: 35px;
+          }
+        }
+      }
+    }
+    .slick-dots{
+      top: 380px;
+      left: 200px;
+    }
+
+  }
+  .slick-next,  .slick-arrow{
+    top: 357px;
+  }
+}
